@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using TaskManagerApi.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("TaskManageDevDB");
+var connectionString = builder.Configuration.GetConnectionString("TaskManagerDB");
 
-builder.Services.AddDbContext<AppDbContext>(options => options.use);
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
