@@ -8,7 +8,7 @@ namespace TaskManagerApi.Models
     public class UserTask
     {
         [Key]
-        public Guid TaskId { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
         [StringLength(100)]
@@ -20,6 +20,11 @@ namespace TaskManagerApi.Models
         [Required]
         public UserTaskStatus Status { get; set; } = UserTaskStatus.NoStatus;
 
-        public DateTime DueDate { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime CreateDateTime { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        public DateTime UpdatedDateTime { get; set; }
+        public DateTime ClosedDateTime { get; set; }
     }
 }
