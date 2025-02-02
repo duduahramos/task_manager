@@ -1,0 +1,47 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+logs/
+*.log
+
+# Config files
+appsettings*.json
+secrets.json
+.env
+
+# Dependencies
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+
+# Rider & Visual Studio Code
+.idea/
+*.code-workspace
+.vscode/
+
+# Publish output
+wwwroot/
+node_modules/
+
+# macOS & Linux
+.DS_Store
+*.swp
+*.swo
+
+# Docker
+.dockerignore
+**/Dockerfile
+**/docker-compose*
+
+# Other
+Thumbs.db
