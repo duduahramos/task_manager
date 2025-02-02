@@ -1,0 +1,11 @@
+1 - conectar no container do banco de dados do sql server e conectar no cli do banco
+
+docker exec -it tarefas_db /opt/mssql-tools18/bin/sqlcmd -S localhost -U SA -C
+
+2 - Comando para criar primeira migracao
+
+dotnet ef migrations add InitialCreate
+
+3 - comando para aplicar migracao
+
+dotnet ef database update
